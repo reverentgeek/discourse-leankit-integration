@@ -20,8 +20,9 @@ async function getTopics( baseUrl, slug, topicId, days ) {
 
 		const res = await axios( config );
 		const topics = res.data["topic_list"].topics;
+		// console.log( topics );
 		return topics.filter( t => {
-			const d = new Date( Date.parse( t.created_at ) );
+			const d = new Date( Date.parse( t.last_posted_at ) );
 			return d > dt;
 		} );
 	} catch ( err ) {
