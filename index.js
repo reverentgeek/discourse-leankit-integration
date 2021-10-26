@@ -86,6 +86,7 @@ async function createCard( { title, id, url } ) {
 				title,
 				typeId,
 				laneId,
+				index: 0,
 				customId: formatCustomId( id ),
 				externalLink: {
 					label: "Forum Post",
@@ -106,8 +107,6 @@ async function createCard( { title, id, url } ) {
 ( async () => {
 	const {
 		DISCOURSE_BASE_URL: baseUrl,
-		// DISCOURSE_API_USERNAME: apiUser,
-		// DISCOURSE_API_KEY: apiKey,
 		DISCOURSE_TOPIC_SLUG: slug,
 		DISCOURSE_TOPIC_ID: topicId,
 		DISCOURSE_DAYS_TO_SEARCH: days
